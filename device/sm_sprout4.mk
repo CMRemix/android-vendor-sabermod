@@ -25,31 +25,18 @@ ifeq ($(strip $(HOST_OS)),linux)
 
   # Sabermod configs
   TARGET_SM_KERNEL := 4.9
-  SHAMU_THREADS := 4
-  PRODUCT_THREADS := $(SHAMU_THREADS)
+  TARGET_SM_AND := 4.9
+  PRODUCT_THREADS := 4
+  USE_SABER_INLINE_KERNEL_BUILDING := false
   ENABLE_STRICT_ALIASING := false
-  LOCAL_O3 := true
+  export USE_KERNEL_OPTIMIZATIONS := true
+  export LOCAL_O3 := true
 
 GRAPHITE_KERNEL_FLAGS := \
-    -floop-parallelize-all \
-    -ftree-parallelize-loops=$(PRODUCT_THREADS) \
     -fopenmp
 endif
 
 # Extra SaberMod GCC C flags for arch target and Kernel
-EXTRA_SABERMOD_GCC_VECTORIZE := \
-  -mvectorize-with-neon-quad
-
-ifeq ($(strip $(LOCAL_STRICT_ALIASING)),true)
-
-  # Check if something is already set in product/sm_products.mk
-  ifndef LOCAL_DISABLE_STRICT_ALIASING
-    LOCAL_DISABLE_STRICT_ALIASING := \
-      libmmcamera_interface\
-      camera.msm8084
-  else
-    LOCAL_DISABLE_STRICT_ALIASING += \
-      libmmcamera_interface\
-      camera.msm8084
-  endif
-endif
+export EXTRA_SABERMOD_GCC_VECTORIZE_CFLAGS := \
+         -ftree-vectorize \
+         -mvectorize-with-neon-quad
