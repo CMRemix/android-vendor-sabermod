@@ -21,8 +21,16 @@ ifneq ($(filter %mako,$(TARGET_PRODUCT)),)
   endif
 endif
 
+ifneq ($(filter %sprout4,$(TARGET_PRODUCT)),)
+  KERNEL_DIR := kernel/mediatek/sprout
+  KERNEL_BINARY_IMAGE := zImage-dtb
+  ifneq ($(filter cmremix%,$(TARGET_PRODUCT)),)
+    KERNEL_DEFCONFIG := cyanogenmod_sprout_defconfig
+  endif
+endif
+
 ifdef KERNEL_DIR
-  include $(KERNEL_DIR)/AndroidKernel.mk
+  include $(KERNEL_DIR)/AndroidKernel_sm.mk
 endif
 
 # cp will do.
