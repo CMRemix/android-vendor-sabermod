@@ -30,7 +30,7 @@ ifneq ($(filter %sprout4,$(TARGET_PRODUCT)),)
 endif
 
 ifdef KERNEL_DIR
-  include $(KERNEL_DIR)/AndroidKernel_sm.mk
+  include $(KERNEL_DIR)/AndroidKernel.mk
 endif
 
 # cp will do.
