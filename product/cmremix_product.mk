@@ -86,4 +86,4 @@ endif
 
 # -O3 disabled by default.  To enable it change here to := true,
 # or enable in vendor/sm/device/sm_device.mk
-export LOCAL_O3 := true
+#export LOCAL_O3 := true

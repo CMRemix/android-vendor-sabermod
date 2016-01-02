@@ -15,33 +15,12 @@
 #
   # Sabermod configs
   TARGET_ARCH := arm
-  TARGET_NDK_VERSION := 4.9
-  TARGET_SM_AND := 4.9
-  TARGET_SM_KERNEL := 5.2
-  USE_CLANG_QCOM := true
-  USE_CLANG_QCOM_VERBOSE := false
-  USE_CLANG_QCOM_POLLY := true
-  CLANG_QCOM_COMPILE_ART := false
-  CLANG_QCOM_COMPILE_BIONIC := true
-  CLANG_QCOM_COMPILE_MIXED := true
-  TRLTETMO_THREADS := 4
-  PRODUCT_THREADS := $(TRLTETMO_THREADS)
+  TARGET_NDK_VERSION := 5.2
+  TARGET_SM_AND := 5.3
+  TARGET_SM_KERNEL := 6.0
   LOCAL_STRICT_ALIASING := true
-  LOCAL_O3 := true
-  export ENABLE_PTHREAD := false
-  LOCAL_LTO := true
-  LTO_COMPRESSION_LEVEL := 3
 
-GRAPHITE_KERNEL_FLAGS := \
-    -floop-parallelize-all \
-    -ftree-parallelize-loops=$(PRODUCT_THREADS) \
-    -fopenmp
-
-# Extra SaberMod GCC C flags for arch target and Kernel
-EXTRA_SABERMOD_GCC_VECTORIZE := \
-         -mvectorize-with-neon-quad
-
-ifeq ($(strip $(LOCAL_STRICT_ALIASING)),true)
+  ifeq ($(strip $(LOCAL_STRICT_ALIASING)),true)
 
   # Enable strict-aliasing kernel flags
 export CONFIG_ARCH_APQ8084_TRLTE_STRICT_ALIASING := y

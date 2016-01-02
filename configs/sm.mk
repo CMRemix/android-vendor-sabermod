@@ -538,47 +538,50 @@ ifeq ($(strip $(LOCAL_STRICT_ALIASING)),true)
     libjavacore \
     libstagefright_avcenc \
     libRSDriver \
-    libminivold \
-    libsdcard \
-    libvold \
-    gatt_testtool \
-    su \
-    libqsap_sdk \
     libc_malloc \
     libRSSupport \
     libstlport \
-    libstlport_static \
-    libcrypto_static \
-    dnsmasq \
+    libandroid_runtime \
+    libcrypto \
+    libwnndict \
     libmedia \
+    dnsmasq \
     ping \
+    ping6 \
     libaudioflinger \
     libmediaplayerservice \
     libstagefright \
-    libssh \
     libvariablespeed \
-    libsurfaceflinger \
-    libstagefright_amrnbdec \
     librtp_jni \
-    libOmxVenc \
     libwilhelm \
-    libldnhncr \
     libdownmix \
+    libldnhncr \
     libqcomvisualizer \
     libvisualizer \
-    lsof \
-    libcrypto \
-    ping6 \
-    ssh \
+    libandroidfw \
+    libstlport_static \
     tcpdump \
-    libfuse \
-    libbusybox \
-    libziparchive-host \
+    libc_bionic_ndk \
+    libc_openbsd_ndk \
+    libskia \
+    libosi \
+    gatt_testtool \
+    dex2oat \
     mdnsd \
+    libavmediaserviceextensions \
+    libart-compiler \
+    libart \
+    libart-disassembler \
+    oatdump \
+    patchoat \
+    libssh \
+    wpa_supplicant \
+    libfdlibm \
     libuclibcrpc \
     busybox \
-    libfdlibm \
-    libcurl \
+    libOmxVenc \
+    fio \
+    libbluetooth_jni \
     $(NO_OPTIMIZATIONS)
 
   # Check if there's already something somewhere.
