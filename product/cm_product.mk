@@ -13,6 +13,77 @@
 # limitations under the License.
 #
 
-# Android ROM toolchain.
-# This can still be overridden in device/sm_device.mk
-TARGET_SM_AND := 4.9
+# Filter device
+ifneq ($(filter %cm_hlte,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_hlte
+endif
+
+ifneq ($(filter %cm_hltespr,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_hltespr
+endif
+
+ifneq ($(filter %cm_hltetmo,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_hltetmo
+endif
+
+ifneq ($(filter %cm_hltevzw,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_hltevzw
+endif
+
+ifneq ($(filter %cm_togari,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_togari
+endif
+
+ifneq ($(filter %cm_trltespr,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_trltespr
+endif
+
+ifneq ($(filter %cm_trltetmo,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_trltetmo
+endif
+
+ifneq ($(filter %cm_trlteusc,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_trlteusc
+endif
+
+ifneq ($(filter %cm_trltexx,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_trltexx
+endif
+
+ifneq ($(filter %cm_trltevzw,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_trltevzw
+endif
+
+ifneq ($(filter %cm_falcon,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_falcon
+endif
+
+ifneq ($(filter %cm_titan,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_titan
+endif
+
+ifneq ($(filter %cm_shamu,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_shamu
+endif
+
+ifneq ($(filter %cm_jflteusc,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_jflteusc
+endif
+
+ifneq ($(filter %cm_sprout4,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_sprout4
+endif
+
+ifneq ($(filter %cm_huashan,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_huashan
+endif
+
+ifneq ($(filter %cm_ls990,$(TARGET_PRODUCT)),)
+  TARGET_DEVICE := cm_ls990
+endif
+
+# General ROM strings
+
+# -O3 disabled by default.  To enable it change here to := true,
+# or enable in vendor/sm/device/sm_device.mk
+#export LOCAL_O3 := true
