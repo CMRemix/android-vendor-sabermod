@@ -15,10 +15,16 @@
 #
   # Sabermod configs
   TARGET_ARCH := arm
-  TARGET_NDK_VERSION := 5.2
-  TARGET_SM_AND := 5.3
-  TARGET_SM_KERNEL := 6.0
-#  LOCAL_STRICT_ALIASING := true
+  TARGET_NDK_VERSION := 4.9
+  TARGET_SM_AND := 4.9
+  TARGET_SM_KERNEL := 4.9
+  TRLTEXX_THREADS := 4
+  PRODUCT_THREADS := $(TRLTETMO_THREADS)
+  LOCAL_STRICT_ALIASING := true
+  LOCAL_O3 := false
+  export ENABLE_PTHREAD := false
+  USE_ARM_MODE := true
+  DISABLE_DTC_OPTS := false
 
   ifeq ($(strip $(LOCAL_STRICT_ALIASING)),true)
 
